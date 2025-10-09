@@ -28,24 +28,22 @@ function login(){
         onSubmit={handleSubmit}
         className="flex-col border-2 border-black p-10 bg-white h-fit  mt-5"
       >
-        <div className="mb-5 flex-col">
-          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
           />
-        </div>
-        <div className="mb-5 flex-col">
           <label htmlFor="password">password</label>
           <input
             type="text"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
           />
-        </div>
+
         <button type="submit">register</button>
       </form>
     </div>

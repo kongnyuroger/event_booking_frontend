@@ -7,37 +7,67 @@
 
 
 body {
-  margin: 0;
+  margin: 0px;
   box-sizing: border-box;
-  background: oklch(92.8% 0.006 264.531);
+  background: oklch(98.5% 0.002 247.839)l;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   padding: 30px;
 }
 
 input{
-  border: 1px solid black;
+  border: 1px solid oklch(92.8% 0.006 264.531);
+  font-size: larger;
+  padding: 5px 20px;
+  border-radius: 9px;
+
 }
 
 button{
   cursor: pointer;
-  background-color: oklch(54.6% 0.245 262.881);
+  background-color: oklch(70.7% 0.165 254.624);
   padding: 5px 20px;
   font-size: large;
   border-radius: 12px;
   color: white;
   
+  
+}
+button:hover
+{
+  background-color: oklch(80.9% 0.105 251.813);
 }
 button.logout-btn
 {
   background-color: oklch(79.238% 0.09052 19.221);
   color: rgb(241, 39, 39);
 }
+button.logout-btn:hover
+{
+  background-color: oklch(74.378% 0.12576 20.473);
+}
+
+button.view-btn
+{
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+}
+button.view-btn:hover
+{
+  background-color: rgb(226, 224, 224);
+}
 h1{
   font-weight: 1000;
   font-size: larger;
   font-size: 25;
   
+}
+h2
+{
+  font-weight: 1000;
+  font-size: large;
+
 }
 p{
   color: oklch(70.8% 0 0)
