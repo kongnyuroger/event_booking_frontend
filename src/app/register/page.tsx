@@ -34,10 +34,10 @@ function Register() {
     <div className=" flex justify-center ">
       <form
         onSubmit={handleSubmit}
-        className="flex-col border-2 border-black p-10 bg-white h-fit  mt-5"
+        className="flex-col flex gap-4 h-fit w-1/2 p-6 rounded-xl shadow bg-white"
       >
-        <div className="flex-col">
-          <div className="mb-5 flex-col">
+        
+    
             <input
               type="name"
               id="name"
@@ -45,8 +45,8 @@ function Register() {
               onChange={(e) => setName(e.target.value)}
               placeholder="User name"
             />
-          </div>
-          <div className="mb-5 flex-col">
+    
+          
             <input
               type="email"
               id="email"
@@ -54,8 +54,8 @@ function Register() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
             />
-          </div>
-          <div className="mb-5 flex-col">
+          
+    
             <input
               type="text"
               id="password"
@@ -63,9 +63,9 @@ function Register() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
-          </div>
-        </div>
-        <button  type="submit">register</button>
+    
+
+        <input className="bg-green-500 cursor-pointer text-white" type="submit" />
       </form>
     </div>
   );

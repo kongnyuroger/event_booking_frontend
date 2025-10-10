@@ -26,7 +26,7 @@ function login(){
     <div className=" flex justify-center ">
       <form
         onSubmit={handleSubmit}
-        className="flex-col border-2 border-black p-10 bg-white h-fit  mt-5"
+        className="flex-col flex gap-4 h-fit w-1/2 p-6 rounded-xl shadow bg-white"
       >
           <input
             type="email"
@@ -35,7 +35,7 @@ function login(){
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
           />
-          <label htmlFor="password">password</label>
+          
           <input
             type="text"
             id="password"
@@ -44,7 +44,7 @@ function login(){
             placeholder="Password"
           />
 
-        <button type="submit">register</button>
+        <input className="bg-green-500 cursor-pointer text-white" type="submit" />
       </form>
     </div>
   );

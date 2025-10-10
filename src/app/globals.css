@@ -20,6 +20,7 @@ input{
   font-size: larger;
   padding: 5px 20px;
   border-radius: 9px;
+  width: 100%;
 
 }
 
@@ -56,6 +57,10 @@ button.view-btn
 button.view-btn:hover
 {
   background-color: rgb(226, 224, 224);
+}
+button.search
+{
+  background-color: lab(71 -62.55 46.81);;
 }
 h1{
   font-weight: 1000;

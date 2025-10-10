@@ -14,7 +14,7 @@ function Navbar(){
         const storedUser = localStorage.getItem("userName")
         setToken(storedToken)
         setUser(storedUser)
-     },[])
+     },[token,user])
     function logout(){
         localStorage.removeItem("token")
         setToken(null)
@@ -24,7 +24,7 @@ function Navbar(){
     }
 
     return(
-        <div className="flex h-fit items-center justify-between p-4 bg-white rounded-xl z-40 shadow">
+        <div className="flex mb-6 h-fit items-center justify-between p-4 bg-white rounded-xl z-40 shadow">
             <div className="flex items-center gap-3">
                 <h1>EventBooking</h1>
                 <p>Secure ticketing . bookings</p>
