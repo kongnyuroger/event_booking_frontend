@@ -20,6 +20,9 @@ function login(){
             router.push("/dashboard")
         }catch(err: any){
             console.log(err.response.data)
+            alert(err.response.data.error
+              
+            )
         }
         
     }

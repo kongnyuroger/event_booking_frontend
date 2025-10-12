@@ -10,7 +10,7 @@ function CreateEvent(){
        const [description, setDescription] = useState<string>("");
        const [date, setDate] = useState<string>("");
        const [numSeats , setNumSeats] = useState(0)
-       const [error, setError] = useState<string>("");
+       const [error, setError] = useState<string | null>(null);
      
        const handleSubmit = async (e: React.FormEvent) => {
          e.preventDefault();
@@ -19,6 +19,8 @@ function CreateEvent(){
            console.log(res.data);
          } catch (err: any) {
            setError(err.response.data.error);
+         }finally{
+            alert("event created")
          }
          setTitle("");
          setDescription("");
@@ -73,7 +75,7 @@ function CreateEvent(){
                    placeholder="number of seats for events"
                  />
      
-             <input className="bg-green-500 cursor-pointer text-white" type="submit" />
+             <input className="bg-green-500 cursor-pointer text-white" type="submit"/>
            </form>
          </div>
        );

@@ -9,9 +9,10 @@ interface cardProps {
   seatsleft: string;
   totalseats: string;
   description: string;
+  details: () => void
 
 }
-const EventCard: React.FC<cardProps> = ({title, date, seatsleft,totalseats ,description}) =>{
+const EventCard: React.FC<cardProps> = ({title, date, seatsleft,totalseats ,description, details}) =>{
     return(
         <motion.div whileHover={{y: -4}} className="p-4 rounded-xl w-96 bg-white shadow ">
             <div className="flex justify-between">
@@ -26,7 +27,7 @@ const EventCard: React.FC<cardProps> = ({title, date, seatsleft,totalseats ,desc
             </div>
             <p className="text-gray-100">{description}</p>
             <div className=" flex gap-4 mt-4 ">
-                <button className="view-btn">View</button>
+                <button onClick={details} className="view-btn">View</button>
                 <button>Book</button>
             </div>
         </motion.div>

@@ -27,7 +27,7 @@ function Register() {
     setEmail("");
     setPassword("");
   };
-
+  if(error) alert(error)
   console.log(error);
 
   return (

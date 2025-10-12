@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
-import { getEvents } from "@/services/api";
+import { getEvents, getEvent } from "@/services/api";
 import { useState, useEffect } from "react";
 import EventCard from "@/components/EventCard";
+import { useRouter } from "next/navigation";
 import { h1 } from "framer-motion/m";
 
 export default function Home() {
@@ -12,6 +13,8 @@ export default function Home() {
     const [hasmore, setHasmore] = useState(true)
     const [loading, setLoading] = useState(false)
     const limit = 6
+
+    const router = useRouter()
      async function fetchEvents(lim: number, off: number ) {
         try {
         setLoading(true)
@@ -26,6 +29,7 @@ export default function Home() {
       }
       }
 
+
     useEffect(() => {
       fetchEvents(limit, offset)
     }, [offset]);
@@ -38,6 +42,9 @@ export default function Home() {
        if (offset >= 0) {setOffset(prev => prev - 6)}
       
     }
+
+    
+
     console.log(events)
   function handleSubmit() {}
   return (
@@ -71,6 +78,7 @@ export default function Home() {
             description={event.description}
             seatsleft={event.available_seats}
             totalseats={event.total_seats}
+            details={()=>{router.push(`/${event.id}`)}}
             />
             
           ))

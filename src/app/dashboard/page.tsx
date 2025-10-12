@@ -39,6 +39,7 @@ function dashboard(){
             console.log(err.message);
           } finally {
             setLoading(false)
+           
           }
           }
     
@@ -53,7 +54,7 @@ function dashboard(){
                 <h2>My Created Events</h2>
                 {loading? (<p>looging</p>):
                     (events.map((event, i) => (
-                        <div key={i} className="p-4 border mb-4 flex"> 
+                        <div key={i} className="p-4 border border-gray-100 rounded mb-4 flex"> 
                         <h3>{event.title} -- </h3>
                         <p>{event.date}</p>
                         </div>
@@ -65,7 +66,7 @@ function dashboard(){
                 <h2>My Bookings</h2>
                 {loading? (<p>loogin</p>):
                     (bookedEvents.map((event, i) => (
-                        <div key={i} className="p-4 border mb-4 flex"> 
+                        <div key={i} className="p-4 border border-gray-100 rounded mb-4 flex"> 
                         <h3>{event.title} -- </h3>
                         <p>{event.date}</p>
                         </div>
