@@ -15,6 +15,7 @@ function login(){
             const res = await loginUser(email, password)
             localStorage.setItem('token', res.data.user.accessToken)
             localStorage.setItem('userName', res.data.user.username)
+
             console.log(res.data)
             router.push("/dashboard")
         }catch(err: any){

@@ -15,4 +15,5 @@ API.interceptors.request.use((req) => {
 export const register = (name, email, password) => API.post('/auth/register', {name, email, password})
 export const loginUser = (email, password) => API.post('/auth/login', {email, password})
 export const getEvents = (limit, offset) => API.get(`/events?limit=${limit}&offset=${offset}`)
-
+export const UserEvents = () => API.get(`events/user`)
+export const bookings = () => API.get(`/bookings`)
