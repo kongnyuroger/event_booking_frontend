@@ -15,7 +15,7 @@ body {
   padding: 30px;
 }
 
-input{
+input,textarea{
   border: 1px solid oklch(92.8% 0.006 264.531);
   font-size: larger;
   padding: 5px 20px;
