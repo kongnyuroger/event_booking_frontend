@@ -4,12 +4,12 @@ import React, { use } from "react";
 import { useEffect, useState } from "react";
 import { getEvent } from "@/services/api";
 import EventCard from "@/components/EventCard";
-import { div } from "framer-motion/m";
 
 function eventdetails() {
   const [event, setEvent] = useState([]);
   const [loading, setLoading] = useState(false);
   const { eventId } = useParams();
+  const [bookform, setBookform] = useState(false)
 
   async function getsingleEvent(id) {
     try {
@@ -25,19 +25,31 @@ function eventdetails() {
   }
 
   useEffect(() => {
-    getsingleEvent(eventId)
+    getsingleEvent(eventId);
   }, [eventId]);
 
-  return(
+  return (
     <div>
-      <EventCard 
-            title={event.title}
-            date={event.created_at}
-            description={event.description}
-            seatsleft={event.available_seats}
-            totalseats={event.total_seats}
-            details={()=>{}}
-            />
+      <EventCard
+        title={event.title}
+        date={event.created_at}
+        description={event.description}
+        seatsleft={event.available_seats}
+        totalseats={event.total_seats}
+        details={() => {}}
+        book={() => setBookform(true)}
+      />
+      {bookform && (
+        <div className="book-overlay">
+          <form className="bg-white p-6">
+            <label htmlFor="seats">Seats</label>
+            <input type="number" />
+            <button onClick={close} type="submit">
+              Book
+            </button>
+          </form>
+        </div>
+      )}
     </div>
   );
 }

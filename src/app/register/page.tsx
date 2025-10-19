@@ -3,6 +3,7 @@ import React, { use } from "react";
 import { register } from "../../services/api";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function Register() {
   const [name, setName] = useState<string>("");
@@ -66,6 +67,7 @@ function Register() {
     
 
         <input className="bg-green-500 cursor-pointer text-white" type="submit" />
+        <p className="flex  justify-center ">I have an acount! <Link className="text-blue-500 " href='/login'>{' '} Login</Link> </p>
       </form>
     </div>
   );

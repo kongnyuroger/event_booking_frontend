@@ -2,7 +2,7 @@
 import { useAuth } from "@/hooks/useAuth"
 import { useState, useEffect } from "react"
 import { UserEvents, bookings} from "@/services/api"
-import { div } from "framer-motion/m"
+import { useRouter } from "next/navigation"
 
 
 
@@ -15,6 +15,7 @@ function dashboard(){
     const [bookedEvents, setBookedEvents] = useState([])
     const [loading, setLoading] = useState(false)
 
+    const router = useRouter()
     async function fetchEvents() {
             try {
             setLoading(true)
@@ -45,6 +46,7 @@ function dashboard(){
     
     
         useEffect(() => {
+          
           fetchEvents()
           fetchBookings()
         }, []);

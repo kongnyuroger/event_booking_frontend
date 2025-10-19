@@ -17,7 +17,9 @@ function Navbar(){
      },[token,user])
     function logout(){
         localStorage.removeItem("token")
+        localStorage.removeItem("userName")
         setToken(null)
+        router.refresh()
     }
     function login(){
         router.push("/login")
@@ -26,8 +28,8 @@ function Navbar(){
     return(
         <div className="flex mb-6 h-fit items-center justify-between p-4 bg-white rounded-xl z-40 shadow">
             <div className="flex items-center gap-3">
-                <h1>EventBooking</h1>
-                <p>Secure ticketing . bookings</p>
+                <h1 className="text-gray-500">EventBooking</h1>
+                <p className="text-gray-500">Secure ticketing . bookings</p>
             </div>
             <div className="flex items-center gap-6">
                 <nav>

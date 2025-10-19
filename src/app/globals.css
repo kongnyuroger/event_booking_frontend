@@ -89,3 +89,14 @@ li:hover
 {
   background-color: oklch(86.765% 0.00108 12.127) ;
 }
+
+.book-overlay
+{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
