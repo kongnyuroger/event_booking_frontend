@@ -13,7 +13,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [bookform, setBookform] = useState(false);
   const [seats, setSeats] = useState(0);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [id, setId] = useState(0);
   const limit = 6;
 
@@ -54,10 +54,17 @@ export default function Home() {
       setBookform(false);
     } catch (err: any) {
       console.log(err.response);
-      alert(err.response.data.error);
+      if (err?.response?.data?.error?.toLowerCase()?.includes("invalide token") || err?.response?.data?.error?.toLowerCase()?.includes("no token provided")) {
+        router.push("/login")
+        alert('login to continou with this action')
+      } else{
+              alert("something went wrong");
+
+      }
+
     }
   }
-   async function handleSearch(e: any) {
+  async function handleSearch(e: any) {
     e.preventDefault();
     try {
       const res = await search(query);
@@ -76,8 +83,15 @@ export default function Home() {
           <p>book seats before they run out</p>
         </div>
         <div>
-          <form onSubmit = {handleSearch} className="w-70 gap-2 flex">
-            <input type="text" value={query} onChange={(e) => {setQuery(e.target.value)}} placeholder="find event" />
+          <form onSubmit={handleSearch} className="w-70 gap-2 flex">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+              placeholder="find event"
+            />
             <button className=" search" type="submit">
               Search
             </button>

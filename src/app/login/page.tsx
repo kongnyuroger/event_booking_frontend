@@ -17,9 +17,10 @@ function login() {
       localStorage.setItem("userName", res.data.user.username);
 
       console.log(res.data);
+      router.push("/dashboard");
       window.location.reload();
 
-      router.push("/dashboard");
+      
     } catch (err: any) {
       console.log(err.response.data);
       alert(err.response.data.error);
@@ -50,6 +51,7 @@ function login() {
         <input
           className="bg-green-500 cursor-pointer text-white"
           type="submit"
+          
         />
         <p className="flex  justify-center ">
           don't have an acount!{" "}
